@@ -158,10 +158,10 @@ def reindex(root: str = ".") -> str:
 
             rows_to_insert.append((relative_path, title, content))
 
-            print(f"  ✓ Indexed: {relative_path}")
+            print(f"  OK - Indexed: {relative_path}")
 
         except Exception as error:
-            print(f"  ✗ Skipped {file_path.name}: {error}")
+            print(f"  X - Skipped {file_path.name}: {error}")
             continue
 
     # Insert all files into database

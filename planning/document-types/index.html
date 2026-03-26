@@ -1611,6 +1611,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#nrf-connect-sdk-known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nRF Connect SDK known issues
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2906,6 +2917,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#nrf-connect-sdk-known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nRF Connect SDK known issues
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3113,7 +3135,7 @@
 <li>Explains <em>what</em> and <em>why</em>, not <em>how</em></li>
 <li>Uses diagrams, analogies, and examples</li>
 <li>Provides context for tasks documented elsewhere</li>
-<li>Doesn't include step-by-step procedures</li>
+<li>Does not include step-by-step procedures</li>
 <li>Links to related how-to guides and references</li>
 </ul>
 <p><strong>Example:</strong> "BLE advertising overview" — explains advertising modes, parameters, and trade-offs without prescribing configuration steps.</p>
@@ -3210,6 +3232,36 @@
 <p><em>Kconfig option renames or removals:</em> When old Kconfig options are renamed or removed, update each occurrence in the release notes to prevent build errors. Remove the <code>:kconfig:</code> directive from old occurrences and wrap the option name in double backticks: <code>`old_option_name`</code>. Add the Kconfig update as a new entry in the current release notes.</p>
 <p><em>Grammar and style corrections:</em> Fix grammar errors and style issues in old release notes without changing the intended meaning of the original sentences (unless the information is factually incorrect).</p>
 <p><em>Build errors:</em> Fix any issue in old release notes that causes errors during documentation compilation.</p>
+<h4 id="nrf-connect-sdk-known-issues">nRF Connect SDK known issues<a class="headerlink" href="#nrf-connect-sdk-known-issues" title="Permanent link">&para;</a></h4>
+<p>Use a consistent entry structure for items on the <code>Known Issues</code> page. Base each entry on the Jira ticket and include the issue key, affected version or versions, problem description, impact, and any available workaround.</p>
+<p><strong>Entry structure</strong></p>
+<p>Write each entry in this order:</p>
+<ol>
+<li>RST version tag for the affected version or versions</li>
+<li>Jira issue key plus a short summary</li>
+<li>More detailed description of the problem and its impact</li>
+<li><code>Affected platforms</code> entry, if the issue does not affect all platforms</li>
+<li><code>Workaround</code> entry, if a workaround is available</li>
+</ol>
+<p><strong>Optional fields</strong></p>
+<ul>
+<li>Omit <code>Affected platforms</code> when all platforms are affected.</li>
+<li>Omit <code>Workaround</code> when no workaround is available.</li>
+<li>Add the <code>Workaround</code> entry later if a workaround becomes available after the first publication.</li>
+</ul>
+<p><strong>Template</strong></p>
+<div class="highlight"><pre><span></span><code>[RST version tag for affected versions]
+
+[Jira issue key]: [short summary]
+
+[Detailed description of the issue and its impact.]
+
+Affected platforms
+: [Platform list]
+
+Workaround
+: [Workaround steps or mitigation]
+</code></pre></div>
 <h3 id="migration-guide">Migration guide<a class="headerlink" href="#migration-guide" title="Permanent link">&para;</a></h3>
 <p>A migration guide helps users move from one version to another when there are breaking changes.</p>
 <p><strong>Purpose:</strong> Help existing users update their projects to work with a new version.</p>
@@ -3231,7 +3283,7 @@
 </thead>
 <tbody>
 <tr>
-<td>"I'm new, where do I start?"</td>
+<td>"I am new, where do I start?"</td>
 <td>Getting started guide</td>
 </tr>
 <tr>
@@ -3269,7 +3321,7 @@
 <li><strong>Reference</strong> section (API references, Kconfig references)</li>
 <li><strong>Release information</strong> (release notes, migration guides)</li>
 </ol>
-<p>Keep document types distinct. Don't mix step-by-step procedures into a conceptual guide, and don't add lengthy explanations to a reference page. When content crosses types, split it into separate topics and cross-reference.</p>
+<p>Keep document types distinct. Do not mix step-by-step procedures into a conceptual guide, and do not add lengthy explanations to a reference page. When content crosses types, split it into separate topics and cross-reference.</p>
 <h2 id="content-reuse-across-types">Content reuse across types<a class="headerlink" href="#content-reuse-across-types" title="Permanent link">&para;</a></h2>
 <p>Some information appears in multiple document types. Use cross-references and content inclusion to maintain a single source of truth:</p>
 <ul>
@@ -3281,10 +3333,10 @@
 <h2 id="revision-history">Revision history<a class="headerlink" href="#revision-history" title="Permanent link">&para;</a></h2>
 <p>The revision history reflects the main reasons for a document update: new features, compatibility changes, new product versions, or corrections to incorrect information.</p>
 <h3 id="writing-revision-history-entries">Writing revision history entries<a class="headerlink" href="#writing-revision-history-entries" title="Permanent link">&para;</a></h3>
-<p><strong>Use a top-level approach.</strong> Document macro-level changes only. Don't list every sentence that was rewritten or every typo that was fixed.</p>
+<p><strong>Use a top-level approach.</strong> Document macro-level changes only. Do not list every sentence that was rewritten or every typo that was fixed.</p>
 <p><strong>Combine related changes.</strong> If an update touches multiple sections for the same reason (for example, adding a new peripheral), describe it as one entry.</p>
 <p><strong>Be concise.</strong> Each entry should be one or two sentences.</p>
-<p><strong>Don't list boilerplate changes.</strong> Routine formatting updates, template changes, or standard text adjustments don't belong in the revision history.</p>
+<p><strong>Do not list boilerplate changes.</strong> Routine formatting updates, template changes, or standard text adjustments do not belong in the revision history.</p>
 <p><strong>Use "Editorial changes" as a catch-all.</strong> When a revision includes only minor text improvements, grammar fixes, or clarifications, add a single bullet:</p>
 <ul>
 <li>Editorial changes.</li>

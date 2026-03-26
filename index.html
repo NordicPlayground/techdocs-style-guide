@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://nordicplayground.github.io/TechDocs-style-guide/">
+        <link rel="canonical" href="https://nordicplayground.github.io/techdocs-style-guide/">
       
       
       
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#techdocs-style-guide" class="md-skip">
+        <a href="#nordic-techdocs-style-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -296,6 +296,17 @@
     <span class="md-ellipsis">
       
         Sources and hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-guide-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style guide repository
       
     </span>
   </a>
@@ -2768,6 +2779,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#style-guide-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style guide repository
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#whats-covered" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2950,7 +2972,7 @@
 
 
 
-<h1 id="techdocs-style-guide">TechDocs Style Guide<a class="headerlink" href="#techdocs-style-guide" title="Permanent link">&para;</a></h1>
+<h1 id="nordic-techdocs-style-guide">Nordic TechDocs Style Guide<a class="headerlink" href="#nordic-techdocs-style-guide" title="Permanent link">&para;</a></h1>
 <p>The Nordic TechDocs Style Guide is the authoritative reference for technical writing at Nordic Semiconductor. It provides guidelines on grammar, style, content structure, procedures, and formatting for all externally published documentation.</p>
 <h2 id="sources-and-hierarchy">Sources and hierarchy<a class="headerlink" href="#sources-and-hierarchy" title="Permanent link">&para;</a></h2>
 <p>This guide consolidates rules from multiple sources. When sources conflict, follow this precedence:</p>
@@ -2959,6 +2981,8 @@
 <li><a href="https://www.merriam-webster.com/">Merriam-Webster dictionary</a> (spelling and usage)</li>
 </ol>
 <p>The guide was originally forked from the <a href="https://github.com/MicrosoftDocs/microsoft-style-guide/tree/main/styleguide">Microsoft Style Guide</a> and has since been substantially expanded with Nordic-specific guidelines and industry best practices.</p>
+<h2 id="style-guide-repository">Style guide repository<a class="headerlink" href="#style-guide-repository" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/NordicPlayground/techdocs-style-guide">Nordic TechDocs Style Guide</a> is the official repository for the guide.</p>
 <h2 id="whats-covered">What's covered<a class="headerlink" href="#whats-covered" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Grammar and style</strong> — Sentence structure, verbs, clauses, nouns, pronouns, modifiers, person</li>
@@ -2996,10 +3020,10 @@
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mcp<span class="w"> </span>fastmcp
 </code></pre></div>
 <h3 id="step-4-clone-the-repository">Step 4: Clone the repository<a class="headerlink" href="#step-4-clone-the-repository" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/NordicPlayground/test-style-guide
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://https://github.com/NordicPlayground/techdocs-style-guide
 </code></pre></div>
 <h3 id="step-5-preview-the-documentation">Step 5: Preview the documentation<a class="headerlink" href="#step-5-preview-the-documentation" title="Permanent link">&para;</a></h3>
-<p>Navigate to the <code>nordic-techdocs-style-guide</code> directory and run:</p>
+<p>Navigate to the <code>techdocs-style-guide</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>serve
 </code></pre></div>
 <p>The site is available at <code>http://127.0.0.1:8000</code>. Press <strong>Ctrl+C</strong> to stop the server.</p>
@@ -3027,7 +3051,7 @@
 </ul>
 <h3 id="initial-setup">Initial setup<a class="headerlink" href="#initial-setup" title="Permanent link">&para;</a></h3>
 <p>Before using the MCP server for the first time, you must build the search index. Call the <code>reindex</code> tool with the docs directory as the root, or run it manually:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nordic-techdocs-style-guide
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>techdocs-style-guide
 python<span class="w"> </span>tools/tiny_docs_mcp.py
 </code></pre></div>
 <p>Then call the <code>reindex</code> tool from your AI client. Reindex again after adding or modifying documentation files.</p>
@@ -3038,9 +3062,9 @@ python<span class="w"> </span>tools/tiny_docs_mcp.py
 <span class="w">    </span><span class="nt">&quot;nordic-style-guide&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/venv/python&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;/path/to/nordic-techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
+<span class="w">        </span><span class="s2">&quot;/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/nordic-techdocs-style-guide&quot;</span>
+<span class="w">      </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/techdocs-style-guide&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -3054,9 +3078,9 @@ python<span class="w"> </span>tools/tiny_docs_mcp.py
 <span class="w">    </span><span class="nt">&quot;nordic-style-guide&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/venv/python&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;/path/to/nordic-techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
+<span class="w">        </span><span class="s2">&quot;/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/nordic-techdocs-style-guide&quot;</span>
+<span class="w">      </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/techdocs-style-guide&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -3068,9 +3092,9 @@ python<span class="w"> </span>tools/tiny_docs_mcp.py
 <span class="w">      </span><span class="nt">&quot;nordic-style-guide&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/venv/python&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="s2">&quot;/path/to/nordic-techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
+<span class="w">          </span><span class="s2">&quot;/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
 <span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/nordic-techdocs-style-guide&quot;</span>
+<span class="w">        </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/techdocs-style-guide&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>

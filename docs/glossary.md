@@ -355,7 +355,7 @@ Terms in the list that appear in <span style="color:red">red</span> are prohibit
 | data (n.)             | Treat as a collective (mass) noun taking a singular verb. **Example:** *Data is...* |
 | <span style="color:red">Database</span>              | Prohibited when referring to '(GATT Server) Attribute Table'. Use 'GATT Server Attribute Table' or 'Attribute Table'. |
 | data rate (n.)        | **Spelling:** Two words. Source: several (Wikipedia, pcmag, Telecom ABC,...) |
-| datasheet (n.)        | **Spelling:** One word. </br>**Prohibited:** Never refer to our own Product Specifications as datasheets. |
+| datasheet (n.)        | **Spelling:** One word. |
 | de- (prefix)          | Usually no hyphen after the prefix de-. </br>**Examples:** *decoupling, deassert, devalue, demount* (source: [Merriam-Webster](http://www.merriam-webster.com/) and [Hyphenation](punctuation/dashes-and-hyphens.md)) |
 | to decouple (v.)</br>(decoupling) | Usually no hyphen after the prefix de-. </br>**Examples:** *decoupling, devalue, demount* (source: [Merriam-Webster](http://www.merriam-webster.com/)) |
 | to demount (v.)</br>(demounting) | Usually no hyphen after the prefix de-. </br>**Examples:** *decoupling, devalue, demount* (source: [Merriam-Webster](http://www.merriam-webster.com/) and [Hyphenation](punctuation/dashes-and-hyphens.md)) |

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Main Branch]
 
+### Changed
+- Aligned the unit symbol entry in the "Do not use a hyphen" table in `dashes-and-hyphens.md` with the rule for spelled-out units used as modifiers.
+- Added an explanation of when to use a hyphen or a space between a number and a unit used as a modifier to `dashes-and-hyphens.md`.
+
 ## [Release 1.0.1] - 2026-07-30
 
 ### Added

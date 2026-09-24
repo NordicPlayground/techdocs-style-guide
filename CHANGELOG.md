@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - Added the `read_doc` tool to the MCP server, which returns the full content of a search result to clients that can't read MCP resources, such as subagents.
 
+### Updated
+- Aligned the unit symbol entry in the "Do not use a hyphen" table in `dashes-and-hyphens.md` with the rule for spelled-out units used as modifiers.
+- Added an explanation of when to use a hyphen or a space between a number and a unit used as a modifier to `dashes-and-hyphens.md`.
+
 ### Removed
 - Removed the beginner-friendly MCP server `tools/tiny_docs_mcp_easy.py`, which wrote to standard output and broke the stdio protocol.
 
@@ -19,7 +23,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added Auracast to the glossary.
 - Added brief release and deployment guidelines for the github pages site.
 
-### Changed
+### Updated
 - Updated style guidance across grammar, content structure, procedures, punctuation, planning, and writing tips based on editorial feedback.
 - Standardized Bluetooth terminology throughout the guide.
 - Updated repository references and site configuration for the `techdocs-style-guide` repository.
@@ -118,7 +122,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ##### Slashes (`slashes.md`)
 - Added "Why slashes create translation challenges" section explaining multiple meanings
 
-### Changed
+### Updated
 
 #### Punctuation: commas (`commas.md`)
 - Replaced generic examples with Nordic-specific technical examples:

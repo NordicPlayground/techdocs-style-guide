@@ -1,5 +1,4 @@
 # tiny_docs_mcp.py
-from __future__ import annotations
 import sqlite3, pathlib, json
 from mcp.server.fastmcp import FastMCP
 
@@ -8,14 +7,6 @@ mcp = FastMCP("TechDocsStyleGuideMCP")
 # Use absolute path for DB based on the script location
 SCRIPT_DIR = pathlib.Path(__file__).parent.parent
 DB = str(SCRIPT_DIR / "docs_index.db")
-
-# exclude only the *root* README.md
-def _exclude_root_readme(root: pathlib.Path, p: pathlib.Path) -> bool:
-    try:
-        rel = p.resolve().relative_to(root.resolve()).as_posix()
-    except Exception:
-        return False
-    return rel == "README.md"
 
 # skip typical noise dirs
 EXCLUDE_DIRS = {".git", ".hg", ".svn", ".venv", "venv", "node_modules", "dist", "build", "out", ".tox",
@@ -35,25 +26,7 @@ def _reset_schema(cur):
       );
     """)
 
-def _walk(root: pathlib.Path):
-    for p in root.rglob("*"):
-        if not p.is_file():
-            continue
-        if any(part in EXCLUDE_DIRS for part in p.parts):
-            continue
-        if p.suffix.lower() not in {".md", ".rst"}:
-            continue
-        if _exclude_root_readme(root, p):
-            continue
-        yield p
-
-def _rel(root: pathlib.Path, p: pathlib.Path) -> str:
-    return p.resolve().relative_to(root.resolve()).as_posix()
-
-@mcp.tool(
-    name="reindex",
-    description="Rebuild the index from scratch for all .md/.rst under 'root'. Excludes the *root* README.md and common build/VC dirs."
-)
+@mcp.tool()
 def reindex(root: str = ".") -> str:
     """
     Rebuild the index from scratch for all .md/.rst under 'root'.
@@ -63,24 +36,26 @@ def reindex(root: str = ".") -> str:
     c = _conn(); cur = c.cursor()
     _reset_schema(cur)
     rows = []
-    for p in _walk(rootp):
+    for p in rootp.rglob("*"):
+        # relative to root, so folders above root don't count as excluded dirs
+        rel = p.relative_to(rootp)
+        if (not p.is_file() or p.suffix.lower() not in {".md", ".rst"}
+                or any(part in EXCLUDE_DIRS for part in rel.parts) or rel.as_posix() == "README.md"):
+            continue
         try:
             text = p.read_text(encoding="utf-8", errors="ignore")
-        except Exception:
+        except OSError:
             continue
-        rows.append((_rel(rootp, p), p.stem, text))
+        rows.append((rel.as_posix(), p.stem, text))
     if rows:
         cur.executemany("INSERT INTO docs(path,title,content) VALUES(?,?,?)", rows)
     c.commit(); c.close()
     return f"Indexed {len(rows)} files from {rootp}"
 
-@mcp.tool(
-    name="search",
-    description="Full-text search. Returns JSON: [{id,title,path,snippet,resource_uri}]"
-)
+@mcp.tool()
 def search(query: str, k: int = 8) -> str:
     """
-    Full-text search. Returns JSON: [{id,title,path,snippet,resource_uri}]
+    Full-text search. Returns JSON: [{id,title,path,snippet,resource_uri}]. Use read_doc with a hit's id for the full page.
     """
     c = _conn(); c.row_factory = sqlite3.Row
     cur = c.cursor()
@@ -94,7 +69,7 @@ def search(query: str, k: int = 8) -> str:
     """, (query, k))
     out = []
     for r in cur.fetchall():
-        rid = int(r["rowid"])
+        rid = r["rowid"]
         out.append({
             "id": rid,
             "title": r["title"],
@@ -117,6 +92,13 @@ def get_doc_by_id(rowid: int) -> str:
     if not row:
         raise FileNotFoundError(f"No doc with id={rowid}")
     return row["content"]
+
+@mcp.tool()
+def read_doc(id: int) -> str:
+    """
+    Return the full plain content of a search hit by its numeric id. Same text as doc://by-id/{id}.
+    """
+    return get_doc_by_id(id)
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")

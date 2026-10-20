@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Main Branch]
 
+### Added
+- Added the `read_doc` tool to the MCP server, which returns the full content of a search result to clients that can't read MCP resources, such as subagents.
+
+### Removed
+- Removed the beginner-friendly MCP server `tools/tiny_docs_mcp_easy.py`, which wrote to standard output and broke the stdio protocol.
+
 ## [Release 1.0.1] - 2026-07-30
 
 ### Added

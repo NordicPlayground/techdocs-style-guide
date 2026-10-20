@@ -103,15 +103,13 @@ deactivate
 
 ## MCP server
 
-This repository includes two MCP servers that serve the style guide documentation to AI tools via full-text search:
+This repository includes an MCP server, `tools/tiny_docs_mcp.py`, that serves the style guide documentation to AI tools via full-text search.
 
-* `tools/tiny_docs_mcp.py` -- the main server
-* `tools/tiny_docs_mcp_easy.py` -- a beginner-friendly variant with the same functionality
-
-Both servers use a shared SQLite FTS5 index (`docs_index.db`) and expose three capabilities:
+The server uses an SQLite FTS5 index (`docs_index.db`) and exposes four capabilities:
 
 * **`reindex`** -- rebuild the search index from all `.md` files in the docs directory
 * **`search`** -- full-text search returning matching documents with snippets
+* **`read_doc`** -- tool that returns the full content of a search result by its `id`
 * **`doc://by-id/{id}`** -- resource to fetch the full content of a search result
 
 ### Initial setup

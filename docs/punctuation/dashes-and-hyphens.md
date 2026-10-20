@@ -71,25 +71,23 @@ Use a hyphen in the following situations.
 | **Variable names with two or more syllables** | directory-name |
 | **One of the words is a past or present participle**</br> (a verb form ending in *-ed* or -*ing* and used as an adjective or noun) | left-aligned text</br> free-flowing form |
 | **The modifier is a number or single letter plus a noun or participle** | 5-point star</br> y-coordinate values |
-| **Number + spelled-out unit as modifier**</br> When the unit name is spelled out and used as a modifier, use a hyphen between the number and the unit. When the unit is a symbol, use a space instead. See [Units of measurement as modifiers](#units-of-measurement-as-modifiers). | a 16-bit address</br> a 5-bit sequence</br> a 10-kiloohm resistor</br> a 35-millimeter film</br></br> **Unit symbol:** a 10 kΩ resistor</br> a 35 mm film |
+| **Number + unit as modifier**</br> When a number and a unit are used as a modifier before a noun, use a hyphen between them, whether the unit is a symbol or spelled out. See [Units of measurement as modifiers](#units-of-measurement-as-modifiers). | a 16-bit address</br> a 5-bit sequence</br> a 10-kΩ resistor</br> a 3.5-mm headphone jack |
 
 #### Units of measurement as modifiers
 
-Whether you use a hyphen or a space depends on how you write the unit: as a full word or as its symbol.
+Use one rule for all units: when a number and a unit come before a noun and modify it, join them with a hyphen. Before a noun, the number and the unit form a compound modifier, like *5-point star*. This applies whether the unit is a symbol, such as *mm*, *kΩ*, *V*, or *MHz*, or a spelled-out word, such as *bit* or *byte*.
 
-* **Spelled-out unit – use a hyphen.** The unit is a word, such as *bit*, *byte*, *millimeter*, *volt*, or *hertz*. Before a noun, the number and the word form a compound modifier, like *5-point star*, so hyphenate them.
-    * Example: a 16-bit address, a 35-millimeter film, a 5-volt supply.
-* **Unit symbol – use a space.** The unit is an SI symbol, such as *mm*, *kΩ*, *V*, or *MHz*. A symbol is not a word, so the compound-modifier rule does not apply. Always separate the number from the unit symbol with a space, even when the value is used as a modifier. [Source: BIPM](https://www.bipm.org)
-    * Example: a 35 mm film, a 10 kΩ resistor, a 5 V supply.
+* Example: a 16-bit address, a 10-kΩ resistor, a 1.8-V supply.
 
-The same measurement can be written either way:
+When the number and unit do not come before a noun, use a space with a unit symbol and no hyphen.
 
-| Unit written as | Before a noun |
-|-----------------|---------------|
-| Spelled out | a 35-millimeter film |
-| Symbol | a 35 mm film |
+* Example: The resistor is 10 kΩ. The supply voltage is 1.8 V.
 
-Always spell out *bit* and *byte*, so they always take a hyphen when used as modifiers: *a 16-bit address*. For more information, see [Units of measurement](../units-of-measurement.md).
+**Exception:** Do not add a hyphen before the percent sign or a temperature symbol: *a 50% increase*, *a 15°C rise*.
+
+**Note:** This rule deliberately differs from the [BIPM SI Brochure](https://www.bipm.org), which uses a space between the number and the unit symbol even before a noun, for example *a 10 kΩ resistor*.
+
+For more information, see [Units of measurement](../units-of-measurement.md).
 
 ### Do not use a hyphen
 
@@ -105,7 +103,7 @@ Always spell out *bit* and *byte*, so they always take a hyphen when used as mod
 | **With a compound modifier (adverb) ending in “ly”** | An **easily-remembered** mail alias is a person's first initial and last name | An **easily remembered** mail alias is a person's first initial and last name |
 | **By itself in suspended form** | **8-** and 7-bit characters | **8-bit** and 7-bit characters |
 | **With some prefixes:**</br> auto, bi, co, cyber, exa, giga, inter, kilo, mega, meta, micro, mid, mini, multi, neo, non, over, pan, post, pre, pro, re, sub, tera, under, un</br></br> **Exception:** If the stem word begins with a capital letter. For example, non-XML | The database's **pre-defined** settings optimize performance and reduce the need for manual configuration | The database's **predefined** settings optimize performance and reduce the need for manual configuration |
-| **Number + unit symbol as modifier**</br> When the unit is a symbol and used as a modifier, use a space between the number and the unit symbol. When the unit name is spelled out, use a hyphen instead. See [Units of measurement as modifiers](#units-of-measurement-as-modifiers). | a 10-**kΩ** resistor</br> a 35-**mm** film | a 10 kΩ resistor</br> a 35 mm film</br></br> **Spelled out:** a 10-kiloohm resistor</br> a 35-millimeter film |
+| **Number + unit not used as a modifier**</br> When the number and unit do not come before a noun, use a space instead. See [Units of measurement as modifiers](#units-of-measurement-as-modifiers). | The resistor is 10-**kΩ**.</br> The supply voltage is 1.8-**V**. | The resistor is 10 kΩ.</br> The supply voltage is 1.8 V. |
 
 ## Hyphenation examples
 

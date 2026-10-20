@@ -3444,11 +3444,11 @@
 <p>Translated text is often 20-30% longer than English. Design layouts and UI strings with expansion in mind.</p>
 <h3 id="use-translatable-string-formats">Use translatable string formats<a class="headerlink" href="#use-translatable-string-formats" title="Permanent link">&para;</a></h3>
 <p>In code examples that include user-facing strings:</p>
-<div class="highlight"><pre><span></span><code><span class="n">LOG_INF</span><span class="p">(</span><span class="s">&quot;Connection established&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">LOG_INF</span><span class="p">(</span><span class="s">"Connection established"</span><span class="p">);</span>
 </code></pre></div>
 <p>Comment strings that require translation:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/* Translatable: displayed to user */</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Device ready&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Device ready"</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="provide-context-for-translators">Provide context for translators<a class="headerlink" href="#provide-context-for-translators" title="Permanent link">&para;</a></h3>
 <p>When a term has multiple meanings, add context to help translators choose the correct translation. For example, "port" can mean a network port, a hardware port, or porting software.</p>

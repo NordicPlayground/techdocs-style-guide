@@ -2803,7 +2803,7 @@
 <p>Use this kind of structure when your DITA workflow expects a figure element:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;fig&gt;</span>
 <span class="w">  </span><span class="nt">&lt;title&gt;</span>Power<span class="w"> </span>consumption<span class="w"> </span>during<span class="w"> </span>Bluetooth<span class="w"> </span>LE<span class="w"> </span>advertising<span class="nt">&lt;/title&gt;</span>
-<span class="w">  </span><span class="nt">&lt;image</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;ble-advertising-power.svg&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;image</span><span class="w"> </span><span class="na">href=</span><span class="s">"ble-advertising-power.svg"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;alt&gt;</span>Power<span class="w"> </span>consumption<span class="w"> </span>profile<span class="w"> </span>during<span class="w"> </span>a<span class="w"> </span>Bluetooth<span class="w"> </span>LE<span class="w"> </span>advertising<span class="w"> </span>event<span class="nt">&lt;/alt&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/image&gt;</span>
 <span class="nt">&lt;/fig&gt;</span>
@@ -2818,9 +2818,9 @@
 <li>In workflows that require linked footnotes, use the project-specific <code>xref</code> pattern so the footnote appears after the table instead of at the end of the page.</li>
 </ul>
 <p>Example pattern:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;entry&gt;</span>Dynamic<span class="w"> </span>(H/L)<span class="nt">&lt;sup&gt;&lt;xref</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;#circuit_config/config_sup_1&quot;</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;dita&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/xref&gt;&lt;/sup&gt;&lt;/entry&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;entry&gt;</span>Dynamic<span class="w"> </span>(H/L)<span class="nt">&lt;sup&gt;&lt;xref</span><span class="w"> </span><span class="na">href=</span><span class="s">"#circuit_config/config_sup_1"</span><span class="w"> </span><span class="na">format=</span><span class="s">"dita"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/xref&gt;&lt;/sup&gt;&lt;/entry&gt;</span>
 ...
-<span class="nt">&lt;p&gt;&lt;sup</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;config_sup_1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/sup&gt;</span><span class="w"> </span>Input<span class="w"> </span>thresholds<span class="w"> </span>are<span class="w"> </span>level<span class="w"> </span>and<span class="w"> </span>hold-time<span class="w"> </span>controlled.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;sup</span><span class="w"> </span><span class="na">id=</span><span class="s">"config_sup_1"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/sup&gt;</span><span class="w"> </span>Input<span class="w"> </span>thresholds<span class="w"> </span>are<span class="w"> </span>level<span class="w"> </span>and<span class="w"> </span>hold-time<span class="w"> </span>controlled.<span class="nt">&lt;/p&gt;</span>
 </code></pre></div>
 <h2 id="cross-references-and-key-based-links">Cross-references and key-based links<a class="headerlink" href="#cross-references-and-key-based-links" title="Permanent link">&para;</a></h2>
 <p>Write cross-references so the sentence still reads well after DITA processing.</p>
@@ -2831,9 +2831,9 @@
 <li>Avoid output that adds unnecessary "on page ..." wording when the sentence already identifies the destination clearly.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;p&gt;</span>The<span class="w"> </span>register<span class="w"> </span><span class="nt">&lt;xref</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;power.dita#power/register.MAINREGSTATUS&quot;</span><span class="nt">&gt;</span>MAINREGSTATUS<span class="nt">&lt;/xref&gt;</span><span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>for<span class="w"> </span>reading<span class="w"> </span>out<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>supply<span class="w"> </span>voltage<span class="w"> </span>mode.<span class="nt">&lt;/p&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;p&gt;</span>The<span class="w"> </span>register<span class="w"> </span><span class="nt">&lt;xref</span><span class="w"> </span><span class="na">href=</span><span class="s">"power.dita#power/register.MAINREGSTATUS"</span><span class="nt">&gt;</span>MAINREGSTATUS<span class="nt">&lt;/xref&gt;</span><span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>for<span class="w"> </span>reading<span class="w"> </span>out<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>supply<span class="w"> </span>voltage<span class="w"> </span>mode.<span class="nt">&lt;/p&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;xref</span><span class="w"> </span><span class="na">keyref=</span><span class="s">&quot;RADIO.CRCPOLY&quot;</span><span class="nt">&gt;</span>CRCPOLY<span class="nt">&lt;/xref&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xref</span><span class="w"> </span><span class="na">keyref=</span><span class="s">"RADIO.CRCPOLY"</span><span class="nt">&gt;</span>CRCPOLY<span class="nt">&lt;/xref&gt;</span>
 </code></pre></div>
 <h2 id="note-elements-in-dita">Note elements in DITA<a class="headerlink" href="#note-elements-in-dita" title="Permanent link">&para;</a></h2>
 <p>Use the same severity meanings as the generic <a href="../content-structure/notes-cautions-tips/">Notes, cautions, and warnings</a> page.</p>
@@ -2845,7 +2845,7 @@
 </ul>
 <p>Keep note tags for content that genuinely needs callout treatment. Do not use them as a visual styling shortcut.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;note</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;warning&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;note</span><span class="w"> </span><span class="na">type=</span><span class="s">"warning"</span><span class="nt">&gt;</span>
 <span class="w">  </span>Do<span class="w"> </span>not<span class="w"> </span>exceed<span class="w"> </span>the<span class="w"> </span>maximum<span class="w"> </span>input<span class="w"> </span>voltage<span class="w"> </span>of<span class="w"> </span>3.6<span class="w"> </span>V<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>GPIO<span class="w"> </span>pins.
 <span class="nt">&lt;/note&gt;</span>
 </code></pre></div>

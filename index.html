@@ -3065,15 +3065,12 @@
 <div class="highlight"><pre><span></span><code>deactivate
 </code></pre></div>
 <h2 id="mcp-server">MCP server<a class="headerlink" href="#mcp-server" title="Permanent link">&para;</a></h2>
-<p>This repository includes two MCP servers that serve the style guide documentation to AI tools via full-text search:</p>
-<ul>
-<li><code>tools/tiny_docs_mcp.py</code> -- the main server</li>
-<li><code>tools/tiny_docs_mcp_easy.py</code> -- a beginner-friendly variant with the same functionality</li>
-</ul>
-<p>Both servers use a shared SQLite FTS5 index (<code>docs_index.db</code>) and expose three capabilities:</p>
+<p>This repository includes an MCP server, <code>tools/tiny_docs_mcp.py</code>, that serves the style guide documentation to AI tools via full-text search.</p>
+<p>The server uses an SQLite FTS5 index (<code>docs_index.db</code>) and exposes four capabilities:</p>
 <ul>
 <li><strong><code>reindex</code></strong> -- rebuild the search index from all <code>.md</code> files in the docs directory</li>
 <li><strong><code>search</code></strong> -- full-text search returning matching documents with snippets</li>
+<li><strong><code>read_doc</code></strong> -- tool that returns the full content of a search result by its <code>id</code></li>
 <li><strong><code>doc://by-id/{id}</code></strong> -- resource to fetch the full content of a search result</li>
 </ul>
 <h3 id="initial-setup">Initial setup<a class="headerlink" href="#initial-setup" title="Permanent link">&para;</a></h3>
@@ -3085,13 +3082,13 @@ python<span class="w"> </span>tools/tiny_docs_mcp.py
 <h3 id="use-with-cursor">Use with Cursor<a class="headerlink" href="#use-with-cursor" title="Permanent link">&para;</a></h3>
 <p>Add the following to your <code>mcp.json</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;nordic-style-guide&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/venv/python&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
+<span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"nordic-style-guide"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path/to/venv/python"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py"</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/techdocs-style-guide&quot;</span>
+<span class="w">      </span><span class="nt">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/path/to/techdocs-style-guide"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -3101,27 +3098,27 @@ python<span class="w"> </span>tools/tiny_docs_mcp.py
 <h3 id="use-with-vs-code">Use with VS Code<a class="headerlink" href="#use-with-vs-code" title="Permanent link">&para;</a></h3>
 <p>Add the following to your <code>.vscode/mcp.json</code> in the workspace root:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;nordic-style-guide&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/venv/python&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
+<span class="w">  </span><span class="nt">"servers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"nordic-style-guide"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path/to/venv/python"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py"</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/techdocs-style-guide&quot;</span>
+<span class="w">      </span><span class="nt">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/path/to/techdocs-style-guide"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Alternatively, add it to your user settings (<code>settings.json</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;nordic-style-guide&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/venv/python&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="s2">&quot;/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py&quot;</span>
+<span class="w">  </span><span class="nt">"mcp"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"servers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"nordic-style-guide"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path/to/venv/python"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">"/path/to/techdocs-style-guide/tools/tiny_docs_mcp.py"</span>
 <span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/techdocs-style-guide&quot;</span>
+<span class="w">        </span><span class="nt">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/path/to/techdocs-style-guide"</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>

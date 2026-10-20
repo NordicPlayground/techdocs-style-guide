@@ -13,16 +13,18 @@ We adhere to the International System of Units (SI) for consistency and accuracy
 
 * Always use abbreviated units in all contexts (not just in tables). Abbreviations are preferred over spelled-out forms.
 * **Exception:** When a unit is used without a value, spell out the unit name. Example: "The dimensions are shown in millimeters."
-* Always include a space between the numeric value and the unit symbol.
+* Always include a space between the numeric value and the unit symbol, unless the value and unit are used as a modifier before a noun.
   * Example: 15 g, 15 mm
 * **Exceptions**:
   * Temperature: When using abbreviations for degrees Celsius or Fahrenheit, do not add a space before or after the degree symbol. Example: 15°C.
   * Percent sign: Example: 50%
 * Always spell out 'bit' and 'byte'; do not abbreviate as 'b' or 'B'.
-* When spelling out the unit name, use a hyphen to separate the number from the unit. [Source: BIPM](https://www.bipm.org)
-  * Example: a 16-bit address, a 35-millimeter film.
-* When the value is used as an adjective, leave a space between the numerical value and the unit symbol. [Source: BIPM](https://www.bipm.org)
-  * Example: a 10 kΩ resistor, a 35 mm film.
+* When the value and unit are used as a modifier before a noun, use a hyphen between the number and the unit. This applies to both unit symbols and spelled-out units.
+  * Example: a 16-bit address, a 10-kΩ resistor, a 3.5-mm headphone jack.
+  * **Exception:** Do not add a hyphen before the percent sign or a temperature symbol. Example: a 50% increase, a 15°C rise.
+  * **Note:** This rule deliberately differs from the [BIPM SI Brochure](https://www.bipm.org), which uses a space between the number and the unit symbol even before a noun, for example *a 10 kΩ resistor*.
+* When the value and unit are not used as a modifier, do not use a hyphen.
+  * Example: The resistor is 10 kΩ. The address has 16 bits.
 
 ## Numbers with units
 

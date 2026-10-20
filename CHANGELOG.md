@@ -10,8 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added the `read_doc` tool to the MCP server, which returns the full content of a search result to clients that can't read MCP resources, such as subagents.
 
 ### Updated
-- Aligned the unit symbol entry in the "Do not use a hyphen" table in `dashes-and-hyphens.md` with the rule for spelled-out units used as modifiers.
-- Added an explanation of when to use a hyphen or a space between a number and a unit used as a modifier to `dashes-and-hyphens.md`.
+- Unified the rule for a number and a unit used as a modifier in `dashes-and-hyphens.md` and `units-of-measurement.md`: use a hyphen for both unit symbols and spelled-out units, for example *a 10-kΩ resistor*. This aligns the rule with the existing examples in `numbers.md`. Added a note that the rule deliberately differs from the BIPM SI Brochure.
 
 ### Removed
 - Removed the beginner-friendly MCP server `tools/tiny_docs_mcp_easy.py`, which wrote to standard output and broke the stdio protocol.
